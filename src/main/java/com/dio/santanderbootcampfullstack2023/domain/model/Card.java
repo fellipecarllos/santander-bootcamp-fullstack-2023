@@ -2,10 +2,21 @@ package com.dio.santanderbootcampfullstack2023.domain.model;
 
 import java.math.BigDecimal;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+
+@Entity(name = "tb_card")
 public class Card {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @Column(unique = true)
     private String number;
+    @Column(name="card_limit", precision = 2, scale = 15, nullable = false)
     private BigDecimal limit;
     
     public Long getId() {
