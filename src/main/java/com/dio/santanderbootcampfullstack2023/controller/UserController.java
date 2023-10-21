@@ -28,6 +28,7 @@ public class UserController {
     public ResponseEntity<User> findById(@PathVariable long id){
         var user = userService.findById(id);
         return ResponseEntity.ok(user);
+        
     }
     
     @PostMapping
